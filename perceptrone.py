@@ -6,6 +6,12 @@ epsilon=10**(-3)
 
 
 def check_circle(x,a,r, epsilon):
+    """
+    >>> check_circle([0.5,2.0],[0.0,0.0],1.0,10**(-3))
+    0
+    >>> check_circle([2.0,0.0],[1.0,0.0],1.0,10**(-3))
+    -1
+    """
     if ((x[0]-a[0])**2)+((x[1]-a[1])**2)>(r**2)+epsilon:
         return 0
     elif ((x[0]-a[0])**2)+((x[1]-a[1])**2)<(r**2)-epsilon:
@@ -24,6 +30,12 @@ def generate(a1,a2,a3,a4,amount):
 
 
 def scalar_prod(a,b):
+    """
+    >>> scalar_prod([1.0,2.5,4.0],[1.0,-4.0,2.5])
+    1.0
+    >>> scalar_prod([2.0,1.0],[-1.0,2.0])
+    0.0
+    """
     res=0
     for i in range(len(a)):
         res+=a[i]*b[i]
